@@ -9,7 +9,7 @@
 ### latest stable version
 
 ```scala
-libraryDependencies += "com.github.xuwei-k" %% "qiitascala" % "0.1.0"
+libraryDependencies += "com.github.xuwei-k" %% "qiitascala" % "0.1.1"
 ```
 
 ### snapshot version
