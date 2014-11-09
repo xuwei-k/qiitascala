@@ -7,7 +7,7 @@ import org.scalacheck.{Prop, Properties}
 import qiitascala.commands._
 import scalaz.\/
 
-abstract class QiitaSpec[A](command: Command[A])(implicit A: EncodeJson[A]) extends Properties(command.getClass.toString) {
+abstract class QiitaSpec[A](val command: Command[A])(implicit A: EncodeJson[A]) extends Properties(command.getClass.toString) {
 
   val action = Qiita.commands2action(Qiita.lift(command))
 
@@ -16,7 +16,7 @@ abstract class QiitaSpec[A](command: Command[A])(implicit A: EncodeJson[A]) exte
   property(name) = Prop.secure{
     val result = run()
     result.foreach{ j =>
-      println(A(j).pretty(PrettyParams.spaces2))
+      //println(A(j).pretty(PrettyParams.spaces2))
     }
     result.leftMap(_.fold(
       println,
