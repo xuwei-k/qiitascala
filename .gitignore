@@ -1,0 +1,6 @@
+*.jar
+*.class
+*.swp
+.history/
+target/
+src_managed/
