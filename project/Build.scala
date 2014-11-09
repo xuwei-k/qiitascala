@@ -145,7 +145,7 @@ object build extends Build {
     baseSettings : _*
   ).settings(
     name := "qiitascala",
-    description := "$description$",
+    description := "Qiita Scala API client",
     libraryDependencies ++= Seq(
       "com.github.xuwei-k" %% "httpz" % httpzVersion,
       "com.github.xuwei-k" %% "httpz-native" % httpzVersion % "test",
