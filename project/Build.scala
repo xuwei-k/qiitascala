@@ -138,7 +138,7 @@ object build extends Build {
     }
   )
 
-  private final val httpzVersion = "0.2.14"
+  private final val httpzVersion = "0.2.15"
   private final val scalazVersion = "7.1.0"
 
   lazy val root = Project("qiitascala", file(".")).settings(
