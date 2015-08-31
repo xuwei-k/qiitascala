@@ -2,8 +2,9 @@ import com.typesafe.sbt.pgp.PgpKeys
 import sbt._
 import sbt.Keys._
 import sbtbuildinfo.Plugin._
+import sbtrelease.Git
 import sbtrelease.ReleaseStateTransformations._
-import sbtrelease._
+import sbtrelease.ReleasePlugin.autoImport._
 import xerial.sbt.Sonatype._
 
 object build extends Build {
@@ -45,10 +46,10 @@ object build extends Build {
 
   private[this] val unusedWarnings = Seq("-Ywarn-unused", "-Ywarn-unused-import")
 
-  val baseSettings = ReleasePlugin.releaseSettings ++ sonatypeSettings ++ buildInfoSettings ++ Seq(
+  val baseSettings = sonatypeSettings ++ buildInfoSettings ++ Seq(
     commands += Command.command("updateReadme")(updateReadme),
     resolvers += Opts.resolver.sonatypeSnapshots,
-    ReleasePlugin.ReleaseKeys.releaseProcess := Seq[ReleaseStep](
+    releaseProcess := Seq[ReleaseStep](
       checkSnapshotDependencies,
       inquireVersions,
       runClean,
