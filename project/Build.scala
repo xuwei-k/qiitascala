@@ -140,7 +140,6 @@ object build extends Build {
   )
 
   private final val httpzVersion = "0.2.16"
-  private final val scalazVersion = "7.1.0"
 
   lazy val root = Project("qiitascala", file(".")).settings(
     baseSettings : _*
@@ -150,7 +149,7 @@ object build extends Build {
     libraryDependencies ++= Seq(
       "com.github.xuwei-k" %% "httpz" % httpzVersion,
       "com.github.xuwei-k" %% "httpz-native" % httpzVersion % "test",
-      "org.scalaz" %% "scalaz-scalacheck-binding" % scalazVersion % "test"
+      "org.scalacheck" %% "scalacheck" % "1.12.2" % "test"
     )
   )
 
