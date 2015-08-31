@@ -139,7 +139,7 @@ object build extends Build {
     scalacOptions in (c, console) ~= {_.filterNot(unusedWarnings.toSet)}
   )
 
-  private final val httpzVersion = "0.2.16"
+  private final val httpzVersion = "0.3.0"
 
   lazy val root = Project("qiitascala", file(".")).settings(
     baseSettings : _*

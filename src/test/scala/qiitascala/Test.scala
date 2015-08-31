@@ -20,7 +20,7 @@ abstract class QiitaSpec[A](val command: Command[A])(implicit A: EncodeJson[A]) 
     }
     result.leftMap(_.fold(
       println,
-      println,
+      (res, error) => println((res, error)),
       (_, error, history, _) => println((error, history)))
     )
     result.isRight
