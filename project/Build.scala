@@ -1,7 +1,8 @@
 import com.typesafe.sbt.pgp.PgpKeys
 import sbt._
 import sbt.Keys._
-import sbtbuildinfo.Plugin._
+import sbtbuildinfo.BuildInfoPlugin
+import sbtbuildinfo.BuildInfoPlugin.autoImport._
 import sbtrelease.Git
 import sbtrelease.ReleaseStateTransformations._
 import sbtrelease.ReleasePlugin.autoImport._
@@ -46,7 +47,7 @@ object build extends Build {
 
   private[this] val unusedWarnings = Seq("-Ywarn-unused", "-Ywarn-unused-import")
 
-  val baseSettings = sonatypeSettings ++ buildInfoSettings ++ Seq(
+  val baseSettings = sonatypeSettings ++ Seq(
     commands += Command.command("updateReadme")(updateReadme),
     resolvers += Opts.resolver.sonatypeSnapshots,
     releaseProcess := Seq[ReleaseStep](
@@ -68,7 +69,6 @@ object build extends Build {
       updateReadmeProcess,
       pushChanges
     ),
-    sourceGenerators in Compile <+= buildInfo,
     buildInfoKeys := Seq[BuildInfoKey](
       organization,
       name,
@@ -142,8 +142,10 @@ object build extends Build {
 
   private final val httpzVersion = "0.3.0"
 
-  lazy val root = Project("qiitascala", file(".")).settings(
-    baseSettings : _*
+  lazy val root = Project(
+    "qiitascala", file(".")
+  ).enablePlugins(BuildInfoPlugin).settings(
+    baseSettings
   ).settings(
     name := "qiitascala",
     description := "Qiita Scala API client",
