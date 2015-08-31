@@ -10,6 +10,8 @@ import xerial.sbt.Sonatype._
 
 object build extends Build {
 
+  private[this] val Scala211 = "2.11.7"
+
   def gitHash: Option[String] = scala.util.Try(
     sys.process.Process("git rev-parse HEAD").lines_!.head
   ).toOption
@@ -102,8 +104,8 @@ object build extends Build {
     scalacOptions ++= PartialFunction.condOpt(CrossVersion.partialVersion(scalaVersion.value)){
       case Some((2, v)) if v >= 11 => unusedWarnings
     }.toList.flatten,
-    scalaVersion := "2.11.7",
-    crossScalaVersions := scalaVersion.value :: "2.10.5" :: Nil,
+    scalaVersion := Scala211,
+    crossScalaVersions := Scala211 :: "2.10.5" :: Nil,
     scalacOptions in (Compile, doc) ++= {
       val tag = if(isSnapshot.value) gitHash.getOrElse("master") else { "v" + version.value }
       Seq(
