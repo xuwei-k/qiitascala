@@ -52,6 +52,7 @@ object build extends Build {
   val baseSettings = sonatypeSettings ++ Seq(
     commands += Command.command("updateReadme")(updateReadme),
     resolvers += Opts.resolver.sonatypeSnapshots,
+    fullResolvers ~= {_.filterNot(_.name == "jcenter")},
     releaseProcess := Seq[ReleaseStep](
       checkSnapshotDependencies,
       inquireVersions,
