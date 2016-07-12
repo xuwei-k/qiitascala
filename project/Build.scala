@@ -10,7 +10,7 @@ import xerial.sbt.Sonatype._
 
 object build extends Build {
 
-  private[this] val Scala211 = "2.11.7"
+  private[this] val Scala211 = "2.11.8"
 
   def gitHash: Option[String] = scala.util.Try(
     sys.process.Process("git rev-parse HEAD").lines_!.head
