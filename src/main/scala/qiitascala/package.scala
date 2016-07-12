@@ -6,7 +6,7 @@ package object qiitascala{
 
   type CommandToAction = Command ~> Action
 
-  type Commands[A] = Free.FreeC[Command, A]
+  type Commands[A] = Free[Command, A]
 
   val interpreter: CommandToAction = Interpreter
 }
