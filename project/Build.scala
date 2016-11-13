@@ -8,7 +8,7 @@ import sbtrelease.ReleaseStateTransformations._
 import sbtrelease.ReleasePlugin.autoImport._
 import xerial.sbt.Sonatype._
 
-object build extends Build {
+object build {
 
   private[this] val Scala211 = "2.11.8"
 
@@ -143,20 +143,6 @@ object build extends Build {
     scalacOptions in (c, console) ~= {_.filterNot(unusedWarnings.toSet)}
   )
 
-  private final val httpzVersion = "0.4.0"
-
-  lazy val root = Project(
-    "qiitascala", file(".")
-  ).enablePlugins(BuildInfoPlugin).settings(
-    baseSettings
-  ).settings(
-    name := "qiitascala",
-    description := "Qiita Scala API client",
-    libraryDependencies ++= Seq(
-      "com.github.xuwei-k" %% "httpz" % httpzVersion,
-      "com.github.xuwei-k" %% "httpz-native" % httpzVersion % "test",
-      "org.scalacheck" %% "scalacheck" % "1.12.5" % "test"
-    )
-  )
+  final val httpzVersion = "0.4.0"
 
 }

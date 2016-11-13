@@ -1,0 +1,15 @@
+import build._
+
+enablePlugins(BuildInfoPlugin)
+
+baseSettings
+
+name := "qiitascala"
+
+description := "Qiita Scala API client"
+
+libraryDependencies ++= Seq(
+  "com.github.xuwei-k" %% "httpz" % httpzVersion,
+  "com.github.xuwei-k" %% "httpz-native" % httpzVersion % "test",
+  "org.scalacheck" %% "scalacheck" % "1.12.5" % "test"
+)
