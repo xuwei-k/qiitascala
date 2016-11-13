@@ -2,6 +2,7 @@ package qiitascala
 package commands
 
 import argonaut.{DecodeJson, Json}
+import argonaut.ArgonautScalaz._
 import httpz._
 import scalaz.{Free, IList, Inject, NonEmptyList}
 

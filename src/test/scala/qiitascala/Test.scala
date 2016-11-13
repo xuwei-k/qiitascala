@@ -1,6 +1,7 @@
 package qiitascala
 
 import argonaut.{EncodeJson, PrettyParams}
+import argonaut.ArgonautScalaz._
 import httpz._
 import httpz.native._
 import org.scalacheck.{Prop, Properties}

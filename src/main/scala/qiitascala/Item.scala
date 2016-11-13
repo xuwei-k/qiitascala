@@ -1,5 +1,6 @@
 package qiitascala
 
+import argonaut.ArgonautScalaz._
 import argonaut.CodecJson
 import httpz.JsonToString
 import scalaz.IList
