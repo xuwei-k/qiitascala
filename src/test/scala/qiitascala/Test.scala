@@ -28,7 +28,8 @@ abstract class QiitaSpec[A](val command: Command[A])(implicit A: EncodeJson[A]) 
   }
 }
 
-object GetCommentSpec extends QiitaSpec(GetComment("77e21d1799c5348dd52c"))
+// TODO
+//object GetCommentSpec extends QiitaSpec(GetComment("77e21d1799c5348dd52c"))
 
 object GetCommentsSpec extends QiitaSpec(GetComments("5df3ad7e53216df5f65f", 1))
 
