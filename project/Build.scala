@@ -143,6 +143,6 @@ object build {
     scalacOptions in (c, console) ~= {_.filterNot(unusedWarnings.toSet)}
   )
 
-  final val httpzVersion = "0.5.0"
+  final val httpzVersion = "0.5.1"
 
 }
