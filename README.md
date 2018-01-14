@@ -2,9 +2,9 @@
 
 [![Build Status](https://secure.travis-ci.org/xuwei-k/qiitascala.png)](http://travis-ci.org/xuwei-k/qiitascala)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.xuwei-k/qiitascala_2.11/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.xuwei-k/qiitascala_2.11)
-[![Scaladoc](http://javadoc-badge.appspot.com/com.github.xuwei-k/qiitascala_2.11.svg?label=scaladoc)](http://javadoc-badge.appspot.com/com.github.xuwei-k/qiitascala_2.11)
+[![Scaladoc](https://javadoc-badge.appspot.com/com.github.xuwei-k/qiitascala_2.11.svg?label=scaladoc)](https://javadoc-badge.appspot.com/com.github.xuwei-k/qiitascala_2.11)
 
-- <http://qiita.com/api/v2/docs>
+- <https://qiita.com/api/v2/docs>
 
 ### latest stable version
 
