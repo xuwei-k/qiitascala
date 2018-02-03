@@ -1,7 +1,6 @@
 import com.typesafe.sbt.pgp.PgpKeys
 import sbt._
 import sbt.Keys._
-import sbtbuildinfo.BuildInfoPlugin
 import sbtbuildinfo.BuildInfoPlugin.autoImport._
 import sbtrelease.Git
 import sbtrelease.ReleaseStateTransformations._
@@ -13,7 +12,7 @@ object build {
   private[this] val Scala211 = "2.11.11"
 
   def gitHash: Option[String] = scala.util.Try(
-    sys.process.Process("git rev-parse HEAD").lines_!.head
+    sys.process.Process("git rev-parse HEAD").lineStream_!.head
   ).toOption
 
   val sonatypeURL = "https://oss.sonatype.org/service/local/repositories/"
@@ -41,7 +40,7 @@ object build {
     val git = new Git(extracted get baseDirectory)
     git.add(readme) ! state.log
     git.commit(message = "update " + readme, sign = false) ! state.log
-    "git diff HEAD^" ! state.log
+    sys.process.Process("git diff HEAD^") ! state.log
     state
   }
 

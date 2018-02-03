@@ -4,6 +4,13 @@ enablePlugins(BuildInfoPlugin)
 
 baseSettings
 
+publishTo := Some(
+  if (isSnapshot.value)
+    Opts.resolver.sonatypeSnapshots
+  else
+    Opts.resolver.sonatypeStaging
+)
+
 name := "qiitascala"
 
 description := "Qiita Scala API client"
