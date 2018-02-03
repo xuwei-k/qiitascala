@@ -9,7 +9,7 @@ import xerial.sbt.Sonatype._
 
 object build {
 
-  private[this] val Scala211 = "2.11.11"
+  private[this] val Scala211 = "2.11.12"
 
   def gitHash: Option[String] = scala.util.Try(
     sys.process.Process("git rev-parse HEAD").lineStream_!.head
@@ -105,7 +105,7 @@ object build {
       case Some((2, v)) if v >= 11 => unusedWarnings
     }.toList.flatten,
     scalaVersion := Scala211,
-    crossScalaVersions := Scala211 :: "2.10.6" :: "2.12.2" :: Nil,
+    crossScalaVersions := Scala211 :: "2.10.7" :: "2.12.4" :: Nil,
     scalacOptions in (Compile, doc) ++= {
       val tag = if(isSnapshot.value) gitHash.getOrElse("master") else { "v" + version.value }
       Seq(
