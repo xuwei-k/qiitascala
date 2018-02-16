@@ -3,6 +3,7 @@ language: scala
 scala:
   - 2.10.7
   - 2.11.12
+  - 2.12.4
 
 sudo: false
 
@@ -25,8 +26,3 @@ env:
   global:
   - secure: "TJ/bWV8BA/K6KrFV23wnEbvg7LJLjFPbc2h7GoMrOzASJiaUYOMpBv9KtsEu49b+niHIOqUttJpNOi2nw4GGDMoPCxMEnLtD1jVU0x4YlOaVmWHBar5UMvQLypkoAD0jrtjZ1ytwqmxTuEtD+Bs2fh5Tg3Agcp5mywgQcrXH/cUjtCxegUntjRkwf0P6nYP1NOy5yq9v7Sne9M0V+8CyIZ8yb0SLUDhvB59v9mxQOZGGn7QfDSSUSCyjYAUJV71f1KCBRyidxUWVcXoWGKlkyRP6Mq/wcmF/5OKxaeUtXFtTxNBlx6qIl4UuMlCT5q01qOdryT2/CkY6+7xb9PTr1Z0PUw0bGU74lcJtSK8PQv1/0fJFu+6bDZF2hyfvgcCVgbAY1dZQwvksJNz2ab80YVR9JM4Y/Om+U8NPTdgDYG71jFw3x+FNWaMRzndy16qfxEUNgRKTA/Z9Zrol5QbuJA9XOs07H+H6x0x0u9VZzy9FOWhr3+gKiPtZsUS3g2jvjtXjpaRvAiM75izFqqX/xDTyWe65vWx4NwCg8rj3Zj1rc8jZSgSdw1IaVmMvEVlm2fVP0hCFHDjg/FQ0dUAAh0GLPSlafEjW/nGFnl9p3iSGlfWdEcX6jJIsWFlf7L8QAexdV3HRRUhxaSaqfVkpknvwXWlTM44ATPXLc9DQpvE="
   - secure: "AubBXP4Kl/EfK+p//a8uuvGTZT7/4c1W9BfO5z7j07scZe8bJQpMdu2EtOgotbcDoJ9a3P53OcokHH2sPHvfd8iTXe0Rves+2Thzv9Vhq2ceYu3QwH4bO47t2f/N1Cf/UsD4kFsJu6dN460gukQM837wrFQ6bOmFgNEyYH0lhJKR22cYuYQRGHBderR4al0c+MQBedbHU9myiztq6x35wAspj1H3/F/U+kWIEwhguiXLlsjJFvzDvvbifHbDIGf5gSNw+9FfZvuBlkwqTmw0C3emBEc3fLhVEXDj6vpGZ5shzFRMYMiG0aThoUS/uhH21y5TWYEeDTxh7Argqb4v4SkJx4fFRTgkxRS52Mvzoze1C4nictkmzATk7DJlepQOCFC+VRnTo5Z4WCiooXzFmsiH//9uT/INp3nT90niKaZcJjOFcTXFqS+atYZ/mVDhsXTxXDNFYUFNmli6Pkp1bz1fDMGc8RfhKH8UGzxTgwdqMpKLWuU2ee/i8ftQZbhCYq3Fluspx0QiToxpoJEKtApHtF3ZFWPT9bQNnEc/kCTYdqme/5Q9qaE7vyaSWM4JnQmIzUDA6B/UFUYzkXnuUX7HEk2R7pOIKuooufWgMg4wB63wz18ZYrR93O3SIhUvRNE4tUtzzINn6jhzj+XA6hTLLI8GHhDknDvsGHtYuAs="
-
-matrix:
-  include:
-  - scala: 2.12.4
-    jdk: oraclejdk8
