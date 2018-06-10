@@ -46,7 +46,7 @@ object build {
 
   val updateReadmeProcess: ReleaseStep = updateReadme
 
-  private[this] val unusedWarnings = Seq("-Ywarn-unused", "-Ywarn-unused-import")
+  private[this] val unusedWarnings = Seq("-Ywarn-unused")
 
   val baseSettings = sonatypeSettings ++ Seq(
     commands += Command.command("updateReadme")(updateReadme),
