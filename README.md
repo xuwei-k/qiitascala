@@ -11,11 +11,3 @@
 ```scala
 libraryDependencies += "com.github.xuwei-k" %% "qiitascala" % "0.3.0"
 ```
-
-### snapshot version
-
-```scala
-resolvers += Opts.resolver.sonatypeSnapshots
-
-libraryDependencies += "com.github.xuwei-k" %% "qiitascala" % "0.3.1-SNAPSHOT"
-```
